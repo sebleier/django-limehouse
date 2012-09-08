@@ -1,14 +1,13 @@
 worker_processes  1;
 
-error_log  /Users/sebleier/envs/back/src/back/logs/error.log;
+error_log  /path/to/logs/error.log;
 
 events {
     worker_connections  1024;
 }
 
 http {
-
-    access_log  /Users/sebleier/envs/back/src/back/logs/access.log;
+    access_log  /path/to/logs/access.log;
 
     server {
         listen   8080;
@@ -38,25 +37,20 @@ http {
         }
 
         location /media/ {
-            root /Users/sebleier/envs/back/src/back/;
+            root /path/to/project/;
         }
 
         location /templates/ {
-            if_modified_since exact;
-            root /Users/sebleier/envs/back/src/back/;
+            root /path/to/project/;
         }
 
         location /static/ {
-            root /Users/sebleier/envs/back/src/back/;
+            root /path/to/project/;
         }
 
+        # For Gunicorn
         location / {
             proxy_pass   http://127.0.0.1:8000;
         }
-
-        # what to serve if upstream is not available or crashes
-        error_page 500 502 503 504 /media/50x.html;
-
-        # this file is used by the nginx.conf
     }
 }
