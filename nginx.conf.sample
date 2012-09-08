@@ -1,0 +1,62 @@
+worker_processes  1;
+
+error_log  /Users/sebleier/envs/back/src/back/logs/error.log;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+
+    access_log  /Users/sebleier/envs/back/src/back/logs/access.log;
+
+    server {
+        listen   8080;
+        server_name _;
+
+        types {
+            text/html                             html htm shtml;
+            text/css                              css;
+            text/xml                              xml rss;
+            image/gif                             gif;
+            image/jpeg                            jpeg jpg;
+            application/javascript                js;
+            application/atom+xml                  atom;
+
+            text/cache-manifest                   manifest appcache;
+            text/mathml                           mml;
+            text/plain                            txt;
+
+            image/png                             png;
+            image/svg+xml                         svg svgz;
+            image/tiff                            tif tiff;
+            image/vnd.wap.wbmp                    wbmp;
+            image/webp                            webp;
+            image/x-icon                          ico;
+            image/x-jng                           jng;
+            image/x-ms-bmp                        bmp;
+        }
+
+        location /media/ {
+            root /Users/sebleier/envs/back/src/back/;
+        }
+
+        location /templates/ {
+            if_modified_since exact;
+            root /Users/sebleier/envs/back/src/back/;
+        }
+
+        location /static/ {
+            root /Users/sebleier/envs/back/src/back/;
+        }
+
+        location / {
+            proxy_pass   http://127.0.0.1:8000;
+        }
+
+        # what to serve if upstream is not available or crashes
+        error_page 500 502 503 504 /media/50x.html;
+
+        # this file is used by the nginx.conf
+    }
+}
