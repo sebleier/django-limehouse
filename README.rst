@@ -27,7 +27,7 @@ configuration::
         root path/to/project/templates/;
     }
 
-include `jquery.js`_, plate.js, and limehouse.js in your template::
+include `jquery.js`_, `plate.js`_, and limehouse.js in your template::
 
     <script src="{{ STATIC_URL }}js/jquery.js"></script>
     <script src="{{ STATIC_URL }}js/plate.js"></script>
@@ -193,6 +193,7 @@ the mixin into any class-based views.
 
 
 .. _plate: https://github.com/chrisdickinson/plate
+.. _plate.js: https://github.com/chrisdickinson/plate
 .. _Chris Dickinson: http://neversaw.us/
 .. _jquery.js: http://code.jquery.com/jquery.min.js
 
