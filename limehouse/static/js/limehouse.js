@@ -88,7 +88,7 @@
 
     window.plate.Template.Meta.registerPlugin('loader',
         function(templateName, ready) {
-            $.get('/templates/'+templatesName, function(html) {
+            $.get('/jstemplates/'+templatesName, function(html) {
                 ready(null, new plate.Template(html));
             });
         }
