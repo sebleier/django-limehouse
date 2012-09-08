@@ -4,7 +4,7 @@ Django Limehouse
 
 A Django app to enhance sites by using pushState and ajax.  Limehouse relies on
 `plate`_, which is a Django template language implementation written in
-Javascript by Chris Dickinson.
+Javascript by `Chris Dickinson`_.
 
 
 Quick Start
@@ -27,7 +27,7 @@ configuration::
         root path/to/project/templates/;
     }
 
-include jquery.js, plate.js, and limehouse.js in your template::
+include `jquery.js`_, plate.js, and limehouse.js in your template::
 
     <script src="{{ STATIC_URL }}js/jquery.js"></script>
     <script src="{{ STATIC_URL }}js/plate.js"></script>
@@ -192,8 +192,9 @@ the mixin into any class-based views.
 
 
 
-
-
+.. _plate: https://github.com/chrisdickinson/plate
+.. _Chris Dickinson: http://neversaw.us/
+.. jquery.js: http://code.jquery.com/jquery.min.js
 
 
 
