@@ -1,5 +1,12 @@
 (function(window, $) {
     $('a[data-targets]').live('click', function(e) {
+        /*
+            TODO::
+
+                * Clean up this mess
+                * Structure it better
+                * Be more specific with TODO recommendations
+        */
         e.preventDefault();
         var href = this.href;
         var targets = $(this).data('targets');
