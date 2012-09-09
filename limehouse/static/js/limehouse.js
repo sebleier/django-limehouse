@@ -58,7 +58,7 @@
         }
 
         function getTemplate(target, template) {
-            $.get('/templates/'+targets[i][1], function(template) {
+            $.get('/jstemplates/'+targets[i][1], function(template) {
                 templates[target] = new plate.Template(template);
                 templatesRetrieved += 1;
                 renderTemplates();
