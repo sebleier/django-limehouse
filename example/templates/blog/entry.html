@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block header %}
+    {% include "blog/entry_header.html" with entry=entry %}
+{% endblock %}
+
+{% block content %}
+    {% include "blog/entry_detail.html" with entry=entry %}
+{% endblock %}

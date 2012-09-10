@@ -1,0 +1,32 @@
+[
+    {
+        "pk": 1,
+        "model": "blog.entry",
+        "fields": {
+            "body": "The is the text of the blog entry",
+            "created": "2012-09-10T01:48:51.031",
+            "author": "Sean Bleier",
+            "title": "Django Limehouse"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "blog.entry",
+        "fields": {
+            "body": "This is the text of the second entry.",
+            "created": "2012-09-10T01:49:42.665",
+            "author": "Sean Bleier",
+            "title": "DjangoCon 2012"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "blog.entry",
+        "fields": {
+            "body": "Now, this is the text of the third entry",
+            "created": "2012-09-10T01:50:56.574",
+            "author": "Sean Bleier",
+            "title": "PyCon 2013"
+        }
+    }
+]

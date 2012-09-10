@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="{{ STATIC_URL }}js/jquery.js"></script>
+        <script src="{{ STATIC_URL }}js/plate.js"></script>
+        <script src="{{ STATIC_URL }}js/limehouse.js"></script>
+        <style type="text/css">
+
+            header {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 80px;
+                width: 100%;
+                background-color: #eeeeee;
+            }
+
+            aside {
+                position: absolute;
+                top: 100px;
+                left: 0px;
+                width: 250px;
+                height: 600px;
+                background-color: #d8d8d8;
+            }
+
+            section {
+                position: absolute;
+                left: 260px;
+                top: 100px;
+                height: 600px;
+                background-color: #fff;
+                width: 750px;
+                border: solid 1px #999;
+                padding: 10px;
+
+            }
+
+            .byline {
+                color: #ccc;
+                font-size: 11px;
+            }
+            .date {
+                color: #ccc;
+                font-size: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Example Blog</h1>
+        </header>
+        <aside>
+            {% block aside %}
+                <ul>
+                    {% for entry in entries %}
+                        <li><a href="{% url entry_detail pk=entry.pk %}" data-targets="section:blog/entry_detail.html;header:blog/entry_header.html">{{ entry.title }}</a></li>
+                    {% empty %}
+                        There are no pages
+                    {% endfor %}
+                </ul>
+            {% endblock %}
+        </aside>
+        <section>
+            {% block content %}
+
+            {% endblock %}
+        </section>
+    </body>
+</html>
