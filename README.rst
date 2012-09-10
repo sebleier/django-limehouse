@@ -54,6 +54,23 @@ For views that you want Limehouse-enabled, include a mixin::
             ...
 
 
+Example Project
+===============
+
+Included is an example project to demonstrate a barebones example of what is
+possible. Simply::
+
+    $ cd <virtual env>
+    $ pip install -e git+https://github.com/sebleier/django-limehouse.git#egg=limehouse
+    $ cd limehouse/example
+    $ ./manage.py syncdb
+    $ ./manage.py runserver
+
+That should be enough to get the example project running.  If you navigate the
+links, there should be no page refreshes. When you hit the back button, the
+pages should return to their previous state.
+
+
 
 The Problem
 ===========
