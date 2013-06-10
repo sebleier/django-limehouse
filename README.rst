@@ -87,8 +87,6 @@ ported-to-python version of a javascript template language, but that doesn't
 help people who like and want to use the Django template language.  `plate`_
 is such an implementation and has most features of the python version.
 
-Second,(TODO: come up with more reasons)
-
 
 The Solution
 ============
