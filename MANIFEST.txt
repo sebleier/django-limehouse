@@ -1,0 +1,3 @@
+include LICENSE.bsd
+include README.rst
+recursive-include limehouse/static *
