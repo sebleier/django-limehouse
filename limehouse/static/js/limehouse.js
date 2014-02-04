@@ -1,5 +1,5 @@
 (function(window, $) {
-    $('a[data-targets]').live('click', function(e) {
+    $(document).on('click', 'a[data-targets]', function(e) {
         /*
             TODO::
 
