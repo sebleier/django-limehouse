@@ -43,6 +43,9 @@
 
         function renderTemplate(target, template) {
             template.render(context, function(err, html) {
+                if (err) {
+                    console.log(err.message)
+                }
                 state[target] = html;
                 templatesRendered += 1;
                 updateDom();
@@ -83,8 +86,7 @@
             }
         });
     });
-
-    window.addEventListener('onpopstate', function(e) {
+    window.addEventListener('popstate', function(e) {
         if (e.state !== null) {
             for(var selector in e.state) {
                $(selector).html(e.state[selector]);
